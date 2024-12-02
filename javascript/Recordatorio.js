@@ -5,7 +5,7 @@ const edad = 25;     // Variable constante
 console.log(`Hola, mi nombre es ${nombre} y tengo ${edad} años.`);
 
 // Tipos de datos
-let numero = 42;           // Número
+let numero = 99;           // Número
 let booleano = true;       // Booleano
 let indefinido;            // Undefined (sin valor)
 let nulo = null;           // Null
