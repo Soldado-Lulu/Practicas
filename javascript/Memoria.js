@@ -1,4 +1,4 @@
-// Datos de ejemplo organizados
+// Datos organizados
 const datos = {
     variables: {
         nombre: "Juan",
@@ -38,69 +38,72 @@ const datos = {
     }
 };
 
-// Función para renderizar datos en el HTML
+// Función para renderizar datos en áreas específicas
 const renderizarDatos = (datos) => {
-    const contenedor = document.getElementById("contenido");
-
-    contenedor.innerHTML = `
-        <h2>1. Variables y Tipos de Datos</h2>
+    document.getElementById("variables").innerHTML = `
+        <h2>1. Variables</h2>
         <ul>
             <li><strong>Nombre:</strong> ${datos.variables.nombre}</li>
             <li><strong>Edad:</strong> ${datos.variables.edad}</li>
-            <li><strong>Tipos:</strong>
-                <ul>
-                    <li><strong>Número:</strong> ${datos.variables.tipos.numero}</li>
-                    <li><strong>Booleano:</strong> ${datos.variables.tipos.booleano}</li>
-                    <li><strong>Undefined:</strong> ${datos.variables.tipos.indefinido}</li>
-                    <li><strong>Null:</strong> ${datos.variables.tipos.nulo}</li>
-                    <li><strong>Arreglo:</strong> ${datos.variables.tipos.arreglo.join(", ")}</li>
-                    <li><strong>Objeto:</strong> ${JSON.stringify(datos.variables.tipos.objeto)}</li>
-                </ul>
-            </li>
+            <li><strong>Tipos:</strong> ${JSON.stringify(datos.variables.tipos)}</li>
         </ul>
+    `;
 
-        <h2>2. Operadores y Condiciones</h2>
+    document.getElementById("operadores").innerHTML = `
+        <h2>2. Operadores</h2>
         <ul>
             <li><strong>Suma:</strong> ${datos.operadores.suma}</li>
             <li><strong>¿Es mayor?:</strong> ${datos.operadores.resultado}</li>
         </ul>
+    `;
 
+    document.getElementById("bucles").innerHTML = `
         <h2>3. Bucles</h2>
         <ul>
             ${datos.bucles.map((i) => `<li>Iteración: ${i}</li>`).join("")}
         </ul>
+    `;
 
-        <h2>4. Funciones Básicas</h2>
+    document.getElementById("funciones").innerHTML = `
+        <h2>4. Funciones</h2>
         <ul>
             <li><strong>Multiplicar 4 x 6:</strong> ${datos.funciones.multiplicar(4, 6)}</li>
-            <li><strong>Área de triángulo (base 10, altura 5):</strong> ${datos.funciones.calcularAreaTriangulo(10, 5)}</li>
+            <li><strong>Área de triángulo:</strong> ${datos.funciones.calcularAreaTriangulo(10, 5)}</li>
         </ul>
+    `;
 
-        <h2>5. Objetos y Métodos</h2>
-        <ul>
-            <li><strong>Estudiante:</strong> Nombre: ${datos.objetos.estudiante.nombre}, Edad: ${datos.objetos.estudiante.edad}</li>
-        </ul>
+    document.getElementById("objetos").innerHTML = `
+        <h2>5. Objetos</h2>
+        <p><strong>Estudiante:</strong> ${JSON.stringify(datos.objetos.estudiante)}</p>
+    `;
 
-        <h2>6. Promesas y Asincronía</h2>
+    document.getElementById("asincronia").innerHTML = `
+        <h2>6. Asincronía</h2>
         <p>${datos.asincronia}</p>
+    `;
 
-        <h2>7. Clases y Herencia</h2>
+    document.getElementById("clases").innerHTML = `
+        <h2>7. Clases</h2>
         <ul>
-            <li><strong>Animal:</strong> ${datos.clases.animal}</li>
-            <li><strong>Perro:</strong> ${datos.clases.perro}</li>
+            <li>${datos.clases.animal}</li>
+            <li>${datos.clases.perro}</li>
         </ul>
+    `;
 
-        <h2>8. Manejo de Errores</h2>
+    document.getElementById("errores").innerHTML = `
+        <h2>8. Errores</h2>
         <p>${datos.manejoErrores}</p>
+    `;
 
+    document.getElementById("funcionesAvanzadas").innerHTML = `
         <h2>9. Funciones Avanzadas</h2>
         <ul>
             <li><strong>Contador:</strong> ${datos.funcionesAvanzadas.contador.join(", ")}</li>
             <li><strong>Números pares:</strong> ${datos.funcionesAvanzadas.numerosPares.join(", ")}</li>
-            <li><strong>Promedio de pares:</strong> ${datos.funcionesAvanzadas.promedioPares}</li>
+            <li><strong>Promedio:</strong> ${datos.funcionesAvanzadas.promedioPares}</li>
         </ul>
     `;
 };
 
-// Llamar a la función para renderizar datos
+// Renderizar los datos
 renderizarDatos(datos);
