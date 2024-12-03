@@ -1,0 +1,82 @@
+Antes de usar Git, necesitas configurarlo con tu nombre y correo electrónico:
+git config --global user.name "Tu Nombre"
+git config --global user.email "tuemail@example.com"
+
+Inicia un repositorio en la carpeta actual:
+git init
+
+Muestra los archivos modificados, no rastreados y la rama actual:
+git status
+
+**PARA AÑADIR CAMBIAS AL AREA DE STAGING**
+Para un archivo específico:
+git add nombre_del_archivo
+
+Para todos los archivos:
+git add .
+
+Guardar Cambios (Commit)
+Crea un snapshot del estado actual de los archivos añadidos:
+git commit -m "Mensaje describiendo los cambios"
+
+
+
+Aquí tienes un resumen de los comandos más importantes de Git para realizar tareas comunes como guardar cambios, revisar versiones anteriores y otras operaciones esenciales.
+
+1. Configuración Inicial
+Antes de usar Git, necesitas configurarlo con tu nombre y correo electrónico:
+
+bash
+Copiar código
+git config --global user.name "Tu Nombre"
+git config --global user.email "tuemail@example.com"
+2. Inicialización de un Repositorio
+Inicia un repositorio en la carpeta actual:
+
+bash
+Copiar código
+git init
+3. Verificar el Estado del Repositorio
+Muestra los archivos modificados, no rastreados y la rama actual:
+
+bash
+Copiar código
+git status
+4. Añadir Cambios al Área de Staging
+Para un archivo específico:
+bash
+Copiar código
+git add nombre_del_archivo
+Para todos los archivos modificados o nuevos:
+bash
+Copiar código
+git add .
+
+5. Guardar Cambios (Commit)
+Crea un snapshot del estado actual de los archivos añadidos:
+git commit -m "Mensaje describiendo los cambios"
+
+
+6. Ver el Historial de Cambios
+Lista los commits realizados en el repositorio:
+git log
+Resumen más simple (una línea por commit):
+git log --oneline
+
+
+8. Comparar Cambios
+Ver qué cambios hay en un archivo específico:
+git diff nombre_del_archivo
+
+Comparar cambios entre tu última versión y el estado actual:
+git diff
+
+
+
+9. Sincronización con GitHub
+Conectar un repositorio local a uno remoto en GitHub:
+git remote add origin URL_DEL_REPOSITORIO
+Subir cambios al repositorio remoto:
+git push origin main
+Descargar los cambios más recientes del repositorio remoto:
+git pull origin main
