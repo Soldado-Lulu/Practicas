@@ -1,131 +1,106 @@
-// 1. VARIABLES Y TIPOS DE DATOS
-// Declaración de variables con let y const
-let nombre = "Juan"; // Variable que puede cambiar
-const edad = 25;     // Variable constante
-console.log(`Hola, mi nombre es ${nombre} y tengo ${edad} años.`);
-
-// Tipos de datos
-let numero = 42;           // Número
-let booleano = true;       // Booleano
-let indefinido;            // Undefined (sin valor)
-let nulo = null;           // Null
-let arreglo = [1, 2, 3];   // Array (lista)
-let objeto = { clave: "valor", otroClave: 42 }; // Objeto
-
-console.log(numero, booleano, indefinido, nulo, arreglo, objeto);
-
-// 2. OPERADORES Y CONDICIONES
-let suma = 5 + 3;    // Operadores aritméticos
-let esMayor = 10 > 5; // Operadores de comparación
-if (esMayor) {
-    console.log("10 es mayor que 5");
-} else {
-    console.log("5 no es mayor que 10");
-}
-
-// Operador ternario
-let resultado = esMayor ? "Sí" : "No";
-console.log(`¿Es 10 mayor que 5? ${resultado}`);
-
-// 3. BUCLES
-for (let i = 0; i < 5; i++) {
-    console.log(`Iteración: ${i}`);
-}
-
-// Recorrer un arreglo
-arreglo.forEach((valor) => {
-    console.log(`Valor en el arreglo: ${valor}`);
-});
-
-// 4. FUNCIONES BÁSICAS
-// Enunciado: Crear una función que multiplique dos números.
-function multiplicar(a, b) {
-    return a * b;
-}
-console.log(`El producto de 4 y 6 es: ${multiplicar(4, 6)}`); // Resultado: 24
-
-// Enunciado: Calcular el área de un triángulo
-const calcularAreaTriangulo = (base, altura) => (base * altura) / 2;
-console.log(`El área de un triángulo de base 10 y altura 5 es: ${calcularAreaTriangulo(10, 5)}`); // Resultado: 25
-
-// 5. OBJETOS Y MÉTODOS
-let estudiante = {
-    nombre: "María",
-    edad: 22,
-    saludar() {
-        console.log(`Hola, soy ${this.nombre}`);
+// Datos de ejemplo organizados
+const datos = {
+    variables: {
+        nombre: "Juan",
+        edad: 25,
+        tipos: {
+            numero: 42,
+            booleano: true,
+            indefinido: undefined,
+            nulo: null,
+            arreglo: [1, 2, 3],
+            objeto: { clave: "valor", otroClave: 42 }
+        }
     },
-};
-estudiante.saludar();
-
-// 6. PROMESAS Y ASINCRONÍA
-const promesa = new Promise((resolve, reject) => {
-    let exito = true; // Simula una operación
-    if (exito) resolve("¡Promesa cumplida!");
-    else reject("Promesa fallida.");
-});
-
-promesa
-    .then((mensaje) => console.log(mensaje)) // Manejo del éxito
-    .catch((error) => console.error(error)); // Manejo del error
-
-// Funciones asíncronas y await
-const obtenerDatos = async () => {
-    try {
-        const respuesta = await promesa; // Espera a que la promesa se resuelva
-        console.log(respuesta);
-    } catch (error) {
-        console.error(error);
+    operadores: {
+        suma: 5 + 3,
+        esMayor: 10 > 5,
+        resultado: 10 > 5 ? "Sí" : "No"
+    },
+    bucles: [0, 1, 2, 3, 4],
+    funciones: {
+        multiplicar: (a, b) => a * b,
+        calcularAreaTriangulo: (base, altura) => (base * altura) / 2
+    },
+    objetos: {
+        estudiante: { nombre: "María", edad: 22 }
+    },
+    asincronia: "Promesa cumplida",
+    clases: {
+        animal: "Animal genérico hace un sonido.",
+        perro: "Fido ladra."
+    },
+    manejoErrores: "Algo salió mal",
+    funcionesAvanzadas: {
+        contador: [1, 2],
+        numerosPares: [2, 4, 6, 8],
+        promedioPares: 5
     }
 };
-obtenerDatos();
 
-// 7. PROGRAMACIÓN AVANZADA
-class Animal {
-    constructor(nombre) {
-        this.nombre = nombre;
-    }
-    hablar() {
-        console.log(`${this.nombre} hace un sonido.`);
-    }
-}
+// Función para renderizar datos en el HTML
+const renderizarDatos = (datos) => {
+    const contenedor = document.getElementById("contenido");
 
-class Perro extends Animal {
-    hablar() {
-        console.log(`${this.nombre} ladra.`);
-    }
-}
+    contenedor.innerHTML = `
+        <h2>1. Variables y Tipos de Datos</h2>
+        <ul>
+            <li><strong>Nombre:</strong> ${datos.variables.nombre}</li>
+            <li><strong>Edad:</strong> ${datos.variables.edad}</li>
+            <li><strong>Tipos:</strong>
+                <ul>
+                    <li><strong>Número:</strong> ${datos.variables.tipos.numero}</li>
+                    <li><strong>Booleano:</strong> ${datos.variables.tipos.booleano}</li>
+                    <li><strong>Undefined:</strong> ${datos.variables.tipos.indefinido}</li>
+                    <li><strong>Null:</strong> ${datos.variables.tipos.nulo}</li>
+                    <li><strong>Arreglo:</strong> ${datos.variables.tipos.arreglo.join(", ")}</li>
+                    <li><strong>Objeto:</strong> ${JSON.stringify(datos.variables.tipos.objeto)}</li>
+                </ul>
+            </li>
+        </ul>
 
-const miPerro = new Perro("Fido");
-miPerro.hablar();
+        <h2>2. Operadores y Condiciones</h2>
+        <ul>
+            <li><strong>Suma:</strong> ${datos.operadores.suma}</li>
+            <li><strong>¿Es mayor?:</strong> ${datos.operadores.resultado}</li>
+        </ul>
 
-// 8. MANEJO DE ERRORES
-try {
-    throw new Error("Algo salió mal");
-} catch (error) {
-    console.error(`Error capturado: ${error.message}`);
-} finally {
-    console.log("Esto siempre se ejecuta.");
-}
+        <h2>3. Bucles</h2>
+        <ul>
+            ${datos.bucles.map((i) => `<li>Iteración: ${i}</li>`).join("")}
+        </ul>
 
-// 9. FUNCIONES AVANZADAS
-// Enunciado: Crear un contador usando closures.
-function crearContador() {
-    let contador = 0;
-    return () => {
-        contador++;
-        console.log(`Contador: ${contador}`);
-    };
-}
+        <h2>4. Funciones Básicas</h2>
+        <ul>
+            <li><strong>Multiplicar 4 x 6:</strong> ${datos.funciones.multiplicar(4, 6)}</li>
+            <li><strong>Área de triángulo (base 10, altura 5):</strong> ${datos.funciones.calcularAreaTriangulo(10, 5)}</li>
+        </ul>
 
-const contador = crearContador();
-contador(); // Contador: 1
-contador(); // Contador: 2
+        <h2>5. Objetos y Métodos</h2>
+        <ul>
+            <li><strong>Estudiante:</strong> Nombre: ${datos.objetos.estudiante.nombre}, Edad: ${datos.objetos.estudiante.edad}</li>
+        </ul>
 
-// Enunciado: Filtrar números pares de un arreglo y calcular el promedio de esos números.
-let numeros = [1, 2, 3, 4, 5, 6, 7, 8];
-let pares = numeros.filter((n) => n % 2 === 0); // Filtrar pares
-let promedio = pares.reduce((acum, n) => acum + n, 0) / pares.length;
+        <h2>6. Promesas y Asincronía</h2>
+        <p>${datos.asincronia}</p>
 
-console.log(`Números pares: ${pares}`);
-console.log(`Promedio de pares: ${promedio}`); // Resultado: 5
+        <h2>7. Clases y Herencia</h2>
+        <ul>
+            <li><strong>Animal:</strong> ${datos.clases.animal}</li>
+            <li><strong>Perro:</strong> ${datos.clases.perro}</li>
+        </ul>
+
+        <h2>8. Manejo de Errores</h2>
+        <p>${datos.manejoErrores}</p>
+
+        <h2>9. Funciones Avanzadas</h2>
+        <ul>
+            <li><strong>Contador:</strong> ${datos.funcionesAvanzadas.contador.join(", ")}</li>
+            <li><strong>Números pares:</strong> ${datos.funcionesAvanzadas.numerosPares.join(", ")}</li>
+            <li><strong>Promedio de pares:</strong> ${datos.funcionesAvanzadas.promedioPares}</li>
+        </ul>
+    `;
+};
+
+// Llamar a la función para renderizar datos
+renderizarDatos(datos);
