@@ -1,0 +1,85 @@
+Nivel 1: Básico
+
+*Suma de N números:
+    Escribe un programa que reciba un número entero positivo (N) y calcule la suma de todos los números desde 1 hasta N.
+
+*Número par o impar:
+    Pide al usuario un número y determina si es par o impar.
+
+*Contador de vocales:
+    Escribe un programa que reciba una cadena y cuente cuántas vocales contiene.
+
+*Conversión de temperaturas:
+    Crea un programa que convierta una temperatura dada en grados Celsius a Fahrenheit.
+
+*Tabla de multiplicar:
+    Genera la tabla de multiplicar para un número dado por el usuario.
+
+
+
+Nivel 2: Intermedio
+
+*Palíndromo:
+    Verifica si una palabra o frase ingresada por el usuario es un palíndromo (se lee igual de izquierda a derecha y viceversa).
+
+*Números primos:
+    Escribe un programa que determine si un número ingresado por el usuario es primo.
+
+*Adivina el número:
+    Crea un juego donde el programa elige un número aleatorio entre 1 y 100, y el usuario debe adivinarlo. Proporciona pistas como "más alto" o "más bajo".
+
+*Mayor y menor en un arreglo:
+    Dado un arreglo de números, encuentra el número más grande y el más pequeño.
+
+*Fibonacci:
+    Genera los primeros N números de la secuencia de Fibonacci.
+
+
+
+Nivel 3: Avanzado
+*Invertir una cadena:
+    Escribe un programa que invierta una cadena dada por el usuario sin usar métodos incorporados.
+
+*Factorial:
+    Calcula el factorial de un número ingresado por el usuario de forma iterativa o recursiva.
+
+*Números únicos:
+    Dado un arreglo de números, encuentra todos los números que no se repiten.
+
+*Juego del "FizzBuzz":
+    Imprime los números del 1 al 100, pero:
+    Para múltiplos de 3, imprime "Fizz".
+    Para múltiplos de 5, imprime "Buzz".
+    Para múltiplos de 3 y 5, imprime "FizzBuzz".
+
+*Ordenar un arreglo:
+    Crea un algoritmo para ordenar un arreglo de números de menor a mayor sin usar métodos de ordenamiento integrados.
+
+
+
+
+Nivel 4: Desafíos Lógicos
+*Escalera de números:
+    Dado un número N, imprime una escalera de números. Por ejemplo, para N=4:
+    1
+    12
+    123
+    1234
+
+*Anagrama:
+    Escribe un programa que determine si dos palabras son anagramas (tienen las mismas letras en diferente orden).
+
+*Patrón de diamante:
+    Crea un patrón en forma de diamante con asteriscos para un número N dado:
+
+      *
+     ***
+    *****
+     ***
+      *
+
+*Cambio de monedas:
+    Dado un monto de dinero y un conjunto de denominaciones (por ejemplo, 1, 5, 10, 25), calcula la cantidad mínima de monedas necesarias para alcanzar el monto.
+
+*Laberinto:
+    Diseña un programa que resuelva un laberinto representado por una matriz, donde 1 son paredes y 0 son caminos.
