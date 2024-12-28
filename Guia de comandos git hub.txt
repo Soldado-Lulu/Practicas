@@ -77,6 +77,6 @@ git diff
 Conectar un repositorio local a uno remoto en GitHub:
 git remote add origin URL_DEL_REPOSITORIO
 Subir cambios al repositorio remoto:
-git push -u origin main
+git push -u origin master  (main)
 Descargar los cambios más recientes del repositorio remoto:
-git pull origin main
+git pull origin master   (main)
