@@ -83,3 +83,15 @@ Nivel 4: Desafíos Lógicos
 
 *Laberinto:
     Diseña un programa que resuelva un laberinto representado por una matriz, donde 1 son paredes y 0 son caminos.
+
+
+
+
+Elegir el ciclo adecuado:
+Situación	Ciclo recomendado
+Sabes cuántas veces iterar	For clásico
+Quieres recorrer valores directamente	For...of
+Trabajas con claves/propiedades	For...in
+Funcionalidad simple en arrays	forEach
+Condición dinámica	While
+Ejecutar al menos una vez	Do...while
