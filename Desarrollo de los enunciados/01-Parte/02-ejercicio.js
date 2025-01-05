@@ -11,4 +11,3 @@ function saberParImpar(N){
 }
 let N = parseInt(prompt("Ingrese un numero positivo ") ,10);
 const resultado = saberParImpar(N);
-
